@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Color Picker</title>
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <div class="wrapper noselect" id="wrap" >
+         <canvas id="elCanvas"></canvas>
+         <div id="elHSL">hsl(<a id="elHue">0</a>, <a id="elSat">50</a>%, <a id="elLig">50</a>%)</div>
+         <div id="elRGB">rgb(<a id="elred">0</a>, <a id="elgreen">0</a>, <a id="elblue">0</a>)</div>
+         <div id="elHEX">hex: <a id="elhex">#000</a></div>
+      </div>
+      <div class="footer noselect" id="foot">scroll: change degree / move mouse: choose color / click: preview color / press to copy: h for hsl, r for rgb, x for hex</div>
+      <script src="js/script.js"></script>
+      <script>
+         browser = {};
+         if (/(Edge\/[0-9]{2})/i.test(navigator.userAgent)) {
+         	browser.agent = navigator.userAgent.match(/(Edge\/[0-9]{2})/i)[0].split("/")[0];
+         	browser.version = parseInt(navigator.userAgent.match(/(Edge\/[0-9]{2})/i)[0].split("/")[1]);
+         } else if (/(chrome\/[0-9]{2})/i.test(navigator.userAgent)) {
+         	browser.agent = navigator.userAgent.match(/(chrome\/[0-9]{2})/i)[0].split("/")[0];
+         	browser.version = parseInt(navigator.userAgent.match(/(chrome\/[0-9]{2})/i)[0].split("/")[1]);
+         } else if (/(firefox\/[0-9]{2})/i.test(navigator.userAgent)) {
+         	browser.agent = navigator.userAgent.match(/(firefox\/[0-9]{2})/i)[0].split("/")[0];
+         	browser.version = parseInt(navigator.userAgent.match(/(firefox\/[0-9]{2})/i)[0].split("/")[1]);
+         } else if (/(MSIE\ [0-9]{1})/i.test(navigator.userAgent)) {
+         	browser.agent = navigator.userAgent.match(/(MSIE\ [0-9]{1})/i)[0].split(" ")[0];
+         	browser.version = parseInt(navigator.userAgent.match(/(MSIE\ [0-9]+)/i)[0].split(" ")[1]);
+         } else if (/(Opera\/[0-9]{1})/i.test(navigator.userAgent)) {
+         	browser.agent = navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[0];
+         	browser.version = parseInt(navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[1]);
+         } else if (/(Trident\/[7]{1})/i.test(navigator.userAgent)) {
+         	browser.agent = "MSIE";
+         	browser.version = 11;
+         } else {
+         	browser.agent = false;
+         	browser.version = false;
+         }
+         
+         if (/(Windows\ NT\ [0-9]{1}\.[0-9]{1})/.test(navigator.userAgent)) {
+         	browser.os = "Windows";
+         
+         	switch (parseFloat(navigator.userAgent.match(/(Windows\ NT\ [0-9]{1}\.[0-9]{1})/)[0].split(" ")[2])) {
+         		case 6.0:
+         			browser.osversion = "Vista";
+         			break;
+         		case 6.1:
+         			browser.osversion = "7";
+         			break;
+         		case 6.2:
+         			browser.osversion = "8";
+         			break;
+				case 6.3:
+         			browser.osversion = "8.1";
+         			break;
+				case 10:
+         			browser.osversion = "10";
+         			break;
+         		default:
+         			browser.osversion = false;
+         	}
+         } else if (/(OS\ X\ [0-9]{2}\.[0-9]{1})/.test(navigator.userAgent)) {
+         	browser.os = "OS X";
+         	browser.osversion = navigator.userAgent.match(/(OS\ X\ [0-9]{2}\.[0-9]{1})/)[0].split(" ")[2];
+         } else if (/(Linux)/.test(navigator.userAgent)) {
+         	browser.os = "Linux";
+         	browser.osversion = false;
+         }
+         
+         if (browser.agent === "MSIE" && browser.version <= 11) {
+         	var newDiv = document.createElement("div");
+         	newDiv.innerHTML = "Internet Explorer does not support new web technologies.<br>Please use firefox/chrome/opera/edge.";
+         	newDiv.setAttribute("style", "background-color:yellow; padding:18px; text-align:center;");
+         	document.body.insertBefore(newDiv, document.body.firstChild);
+         }
+      </script>
+   </body>
+</html>

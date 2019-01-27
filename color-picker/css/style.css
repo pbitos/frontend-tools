@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'Major Mono Display';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url(https://fonts.gstatic.com/s/majormonodisplay/v2/RWmVoLyb5fEqtsfBX9PDZIGr2tFubRh7DXeU.ttf) format('truetype');
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.wrapper {
+	min-height: 95vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+canvas {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+#elHSL {
+	font: 1em/1 'Major Mono Display', monospace;
+	text-shadow: 0 0 3px white;
+	color: white;
+	pointer-events: none;
+}
+
+#elRGB {
+	font: 1em/1 'Major Mono Display', monospace;
+	text-shadow: 0 0 3px white;
+	color: white;
+	pointer-events: none;
+}
+
+#elHEX {
+	font: 1em/1 'Major Mono Display', monospace;
+	text-shadow: 0 0 3px white;
+	color: white;
+	pointer-events: none;
+}
+
+.footer {
+	font: .8em/1 'Major Mono Display', monospace;
+	text-shadow: 0 0 3px white;
+	color: white;
+	text-align: center;
+}
+
+#elHue {
+	display: inline-block;
+	width: 3ch;
+	text-align: right;
+}
+
+#elSat,
+#elLig {
+	display: inline-block;
+	width: 3ch;
+	text-align: right;
+}
