@@ -6,6 +6,6 @@ Some basic tools for frontend coding
 * keycode: find javascript keycode by typing a key
 
 Demos:
-pbitos.eu/color-picker
-pbitos.eu/color-converter
-pbitos.eu/keycode
+http://www.pbitos.eu/color-picker
+http://www.pbitos.eu/color-converter
+http://www.pbitos.eu/keycode
