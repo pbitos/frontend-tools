@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>JavaScript KeyCode</title>
+      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <canvas width="128" height="128" hidden></canvas>
+      <div class="display noselect">
+         <div class="wrap">
+            <p class="key-display"></p>
+            <p class="text-display">Press any key</p>
+            <div class="cards hide">
+               <div class="card item-key">
+                  <div class="card-header">event.key</div>
+                  <div class="card-main">
+                     <div class="main-description">key</div>
+                  </div>
+               </div>
+               <div class="card item-which">
+                  <div class="card-header">
+                     event.which
+                  </div>
+                  <div class="card-main">
+                     <div class="main-description">which</div>
+                  </div>
+               </div>
+               <div class="card item-code">
+                  <div class="card-header">event.code</div>
+                  <div class="card-main">
+                     <div class="main-description">code</div>
+                  </div>
+               </div>
+            </div>
+            <div class="mobile-input">
+            </div>
+            <div class="wrapper">
+               <input type="checkbox" id="switch">
+               <label for="switch" class="switch-label">
+                  <span class="switch-text">DARK MODE</span>
+                  <div class="toggle"></div>
+               </label>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="js/script.js"></script>
+   </body>
+</html>
