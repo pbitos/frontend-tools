@@ -5,7 +5,11 @@ Some basic tools for frontend coding
 * color-converter: convert color code by just pasting
 * keycode: find javascript keycode by typing a key
 
-Demos:
+Demo color-picker:
 http://www.pbitos.eu/color-picker
+
+Demo color-converter:
 http://www.pbitos.eu/color-converter
+
+Demo keycode:
 http://www.pbitos.eu/keycode
